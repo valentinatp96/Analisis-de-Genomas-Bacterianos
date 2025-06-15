@@ -1,0 +1,6 @@
+Scripts de anotación funcional
+
+## Herramientas bioinformáticas sugeridas
+
+- **Anotación funcional:** Prokka, EggNOG-mapper, Bakta
+- **Análisis de expresión:** featureCounts, DESeq2, Salmon
