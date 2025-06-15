@@ -1,6 +1,22 @@
 Scripts de anotación funcional
 
-## Herramientas bioinformáticas sugeridas
+## Herramientas bioinformáticas a implementar
 
-- **Anotación funcional:** Prokka, EggNOG-mapper, Bakta
-- **Análisis de expresión:** featureCounts, DESeq2, Salmon
+- **Anotación funcional:** Prokka
+
+### Script listo para ejecuatr
+#!/bin/bash
+
+# =============================
+# Anotación funcional con Prokka
+# =============================
+
+# Ruta al genoma ensamblado
+GENOME="data/processed/assembly_output/assembly.fasta"
+
+# Directorio de salida
+OUT_DIR="results/annotation/prokka"
+mkdir -p "$OUT_DIR"
+
+# Ejecutar Prokka
+prokka --outdir "$OUT_DIR" --prefix sample "$GENOME"
