@@ -11,5 +11,6 @@ Datos crudos provenientes de secuenciación (Illumina y Nanopore).
 
 ## Herramientas bioinformáticas a implementar
 
+- **Concatenar Archivos fastq:** Fastcat
 - **Control de calidad:** NanoPlot
 - **Trimming:** Porechop
