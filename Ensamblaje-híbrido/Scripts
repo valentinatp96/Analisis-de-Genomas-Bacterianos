@@ -31,6 +31,7 @@ if [ -f "$OUT_DIR/assembly.fasta" ]; then
 else
     echo "Error: El archivo assembly.fasta no se generó. Revisa los logs de Unicycler."
 fi
+# GENOME="data/processed/assembly_output/assembly.fasta
 
 # Visualización del ensamble con bandage para verificar que el genoma esté cerrado
 # El archivo consenso generado a modo de fasta se analizará de la siguiente manera:
