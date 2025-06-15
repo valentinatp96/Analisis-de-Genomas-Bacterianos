@@ -1,0 +1,5 @@
+Scripts de ensamblaje
+## Herramientas bioinformáticas sugeridas
+
+- **Ensamblaje híbrido:** Unicycler, Flye + SPAdes
+- **Evaluación de ensamblaje:** QUAST, BUSCO
