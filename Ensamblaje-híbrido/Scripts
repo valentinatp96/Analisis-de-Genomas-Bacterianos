@@ -1,5 +1,40 @@
 Scripts de ensamblaje
-## Herramientas bioinformáticas sugeridas
 
-- **Ensamblaje híbrido:** Unicycler, Flye + SPAdes
-- **Evaluación de ensamblaje:** QUAST, BUSCO
+## Herramientas bioinformáticas a implementar
+
+- **Ensamblaje híbrido:** Unicycler
+- **Evaluación de ensamblaje:** QUAST
+
+# =============================
+# Script para ensamblaje híbrido con Unicycler
+# y evaluación del ensamblaje con QUAST
+# =============================
+
+# De acuerdo al nombre de las muestras se modifica con los nombres correctos 
+ILLUMINA_R1="data/raw/sample_R1.fastq.gz"
+ILLUMINA_R2="data/raw/sample_R2.fastq.gz"
+NANOPORE_READS="data/raw/sample_nanopore.fastq.gz"
+OUT_DIR="data/processed/assembly_output"
+QUAST_OUT="results/quast_report"
+
+# Se ejecuta el script con Unicycler
+echo "Ejecutando ensamblaje híbrido con Unicycler..."
+unicycler -1 "$ILLUMINA_R1" -2 "$ILLUMINA_R2" -l "$NANOPORE_READS" -o "$OUT_DIR" --mode bold
+
+if [ -f "$OUT_DIR/assembly.fasta" ]; then
+    echo "Ensamblaje completado. Ejecutando QUAST..."
+
+    quast "$OUT_DIR/assembly.fasta" -o "$QUAST_OUT" --threads 4
+
+    echo "Evaluación del ensamblaje completada."
+    echo "Resultados de QUAST guardados en: $QUAST_OUT"
+else
+    echo "Error: El archivo assembly.fasta no se generó. Revisa los logs de Unicycler."
+fi
+
+# Visualización del ensamble con bandage para verificar que el genoma esté cerrado
+# El archivo consenso generado a modo de fasta se analizará de la siguiente manera:
+
+- **Identificación Taxonómica:** Type (Strain) Genome Server (TYGS)
+- **Árbol filognético:** Visualización en iTOOL
+- **Comparación de Genomas:** BLAST Ring Image Generator (BIRG)
