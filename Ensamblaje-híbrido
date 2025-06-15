@@ -1,0 +1,3 @@
+Scripts de ensamblaje
+**Ensamblaje híbrido:** Unicycler, Flye + SPAdes
+**Evaluación de ensamblaje:** QUAST, BUSCO
