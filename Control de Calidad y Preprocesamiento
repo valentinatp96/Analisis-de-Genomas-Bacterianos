@@ -1,0 +1,12 @@
+# Paquetes principales
+library(ShortRead)  # Para datos Illumina
+library(Biostrings)
+library(seqinr)
+library(ggplot2)
+
+# Script para QC básico
+qc_illumina <- function(fastq_file) {
+  reads <- readFastq(fastq_file)
+  quality_scores <- quality(reads)
+  # Análisis de calidad y filtrado
+}
