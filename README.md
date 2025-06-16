@@ -16,3 +16,6 @@ Proyecto bioinformático para el ensamblaje híbrido y análisis de cepas bacter
 - Anotar funcionalmente los genomas ensamblados.
 - Visualizar resultados
 
+## Participación grupal 
+
+- Todos los integrantes del grupo participaron activamente en cada reunión para lograr crear el proyecto.
